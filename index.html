@@ -17,7 +17,7 @@
         <div class="content">
             <h1 class="title">Tic Tac Toe</h1>
             <h3 class="displayTurn">Player 1s turn</h3>
-            <div class="buttons">
+            <div class="buttons" id="disclaimer">
                 <button id="resetBtn" class="btn">Reset</button>
                 <button id="restartBtn" class="btn">Restart</button>
             </div>
@@ -34,6 +34,28 @@
                     <div class="box" id="7">o</div>
                     <div class="box" id="8">x</div>
                 </div>
+            </div>
+        </div>
+        <div id="myModal" class="modal" id="disclaimer">
+            <div class="modal-content">
+                <a href=""><span class="close">x</span></a>
+                <h4>What do you choose?</h4>
+
+                <div>
+                    <label for="human">Human vs Human</label>
+                    <input type="checkbox" id="human" name="human" />
+                </div>
+
+                <div>
+                    <label for="easy-ai">Easy AI</label>
+                    <input type="checkbox" id="easy-ai" name="easy-ai" />
+                </div>
+
+                <div>
+                    <label for="hard-ai">Hard AI</label>
+                    <input type="checkbox" id="hard-ai" name="hard-ai" />
+                </div>
+                <div><button class="submit">Submit</button></div>
             </div>
         </div>
 
