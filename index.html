@@ -18,8 +18,8 @@
             <h1 class="title">Tic Tac Toe</h1>
             <h3 class="displayTurn">Player 1s turn</h3>
             <div class="buttons" id="disclaimer">
-                <button id="resetBtn" class="btn">Reset</button>
-                <button id="restartBtn" class="btn">Restart</button>
+                <!-- <button id="resetBtn" class="btn">Reset</button> -->
+                <button id="startBtn" class="btn">Start</button>
             </div>
 
             <div class="wrapper">
@@ -36,26 +36,30 @@
                 </div>
             </div>
         </div>
-        <div id="myModal" class="modal" id="disclaimer">
-            <div class="modal-content">
-                <a href=""><span class="close">x</span></a>
+        <div id="myModal" class="modal">
+            <div id="modalContent" class="modal-content">
+                <div class="closeBtn">
+                    <button id="close" class="close">x</button>
+                </div>
                 <h4>What do you choose?</h4>
 
-                <div>
+                <div class="input">
                     <label for="human">Human vs Human</label>
                     <input type="checkbox" id="human" name="human" />
                 </div>
 
-                <div>
+                <div class="input">
                     <label for="easy-ai">Easy AI</label>
                     <input type="checkbox" id="easy-ai" name="easy-ai" />
                 </div>
 
-                <div>
+                <div class="input">
                     <label for="hard-ai">Hard AI</label>
                     <input type="checkbox" id="hard-ai" name="hard-ai" />
                 </div>
-                <div><button class="submit">Submit</button></div>
+                <div class="submitBtn">
+                    <button class="submit">Submit</button>
+                </div>
             </div>
         </div>
 
