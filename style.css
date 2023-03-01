@@ -1,6 +1,8 @@
 body {
     margin: 0;
     background-color: black;
+    display: flex;
+    justify-content: center;
 }
 * {
     font-family: 'Montserrat', sans-serif;
@@ -13,8 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 60vw;
-    margin-left: 420px;
+    width: 70vw;
     background-color: rgb(70, 70, 70);
 }
 
@@ -37,9 +38,10 @@ body {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 4em;
     font-weight: 900;
     color: white;
+    font-family: fantasy;
 }
 
 .buttons {
@@ -50,7 +52,6 @@ button {
     height: 35px;
     width: 120px;
     margin-right: 10px;
-    margin-left: 10px;
     font-size: 1.2em;
     border-radius: 5px;
     background-color: rgb(38, 37, 37);
@@ -74,11 +75,13 @@ label {
     color: white;
 }
 
+/* MODAL */
+
 .modal {
     display: flex;
     justify-content: center;
-    width: 30vw;
-    height: 850px;
+    width: 450px;
+    height: 860px;
     position: fixed;
     top: 0;
     right: 0;
@@ -87,7 +90,7 @@ label {
     z-index: 1000;
     background-color: black;
     margin: auto;
-    visibility: hidden;
+    opacity: 0.9;
 }
 
 .modal-content {
@@ -115,26 +118,32 @@ div input {
     margin-top: 20px;
     background-color: rgb(70, 70, 70);
     color: white;
-    margin-left: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitBtn {
+    margin-right: auto;
+    margin-left: auto;
 }
 
 h4 {
     color: white;
     font-size: 2em;
     padding-top: 30px;
-    margin-left: 120px;
+    margin-left: 60px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .close {
-    color: white;
+    margin-top: 20px;
+    margin-left: 380px;
+    width: 30px;
+    height: 30px;
     display: flex;
-    justify-content: flex-end;
-    padding-left: 500px;
-    padding-top: 20px;
-    width: 70px;
-    font-size: 30px;
-}
-
-a {
-    text-decoration: none;
+    justify-content: center;
+    align-items: center;
 }
