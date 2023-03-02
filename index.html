@@ -16,49 +16,21 @@
     <body>
         <div class="content">
             <h1 class="title">Tic Tac Toe</h1>
-            <h3 class="displayTurn">Player 1s turn</h3>
-            <div class="buttons" id="disclaimer">
-                <!-- <button id="resetBtn" class="btn">Reset</button> -->
+            <h3 class="displayTurn" id="displayTurn">Player 1s turn</h3>
+            <div class="buttons">
                 <button id="startBtn" class="btn">Start</button>
             </div>
-
             <div class="wrapper">
-                <div class="gameboard">
-                    <div class="box" id="0">x</div>
-                    <div class="box" id="1">o</div>
-                    <div class="box" id="2">x</div>
-                    <div class="box" id="3">o</div>
-                    <div class="box" id="4">x</div>
-                    <div class="box" id="5">o</div>
-                    <div class="box" id="6">x</div>
-                    <div class="box" id="7">o</div>
-                    <div class="box" id="8">x</div>
-                </div>
-            </div>
-        </div>
-        <div id="myModal" class="modal">
-            <div id="modalContent" class="modal-content">
-                <div class="closeBtn">
-                    <button id="close" class="close">x</button>
-                </div>
-                <h4>What do you choose?</h4>
-
-                <div class="input">
-                    <label for="human">Human vs Human</label>
-                    <input type="checkbox" id="human" name="human" />
-                </div>
-
-                <div class="input">
-                    <label for="easy-ai">Easy AI</label>
-                    <input type="checkbox" id="easy-ai" name="easy-ai" />
-                </div>
-
-                <div class="input">
-                    <label for="hard-ai">Hard AI</label>
-                    <input type="checkbox" id="hard-ai" name="hard-ai" />
-                </div>
-                <div class="submitBtn">
-                    <button class="submit">Submit</button>
+                <div id="gameBoard" class="gameboard">
+                    <div class="box" data-index="0"></div>
+                    <div class="box" data-index="1"></div>
+                    <div class="box" data-index="2"></div>
+                    <div class="box" data-index="3"></div>
+                    <div class="box" data-index="4"></div>
+                    <div class="box" data-index="5"></div>
+                    <div class="box" data-index="6"></div>
+                    <div class="box" data-index="7"></div>
+                    <div class="box" data-index="8"></div>
                 </div>
             </div>
         </div>
