@@ -1,10 +1,9 @@
-
 const Player = (sign) => {
     this.sign = sign;
 
     const getSign = () => sign;
 
-    return {getSign};
+    return { getSign };
 };
 
 const gameBoard = (() => {
@@ -17,38 +16,34 @@ const gameBoard = (() => {
 
     const getBox = (index) => {
         if (index > board.length) return;
-        
-        
+
         return board[index];
     };
 
     const reset = () => {
-       
         for (let i = 0; i < board.length; i++) {
-            board[i] = ''
+            board[i] = '';
         }
     };
 
-    return {setBox, getBox, reset}
-    
+    return { setBox, getBox, reset };
 })();
 
 const displayController = (() => {
-    const boxElements = document.querySelectorAll(".box");
+    const boxElements = document.querySelectorAll('.box');
     const messageElement = document.getElementById('displayTurn');
     const restartButton = document.getElementById('startBtn');
 
     boxElements.forEach((box) => {
-        box.addEventListener("click", (e) => {
-            if(gameController.getIsOver() || e.target.textContent !== '') return;
+        box.addEventListener('click', (e) => {
+            if (gameController.getIsOver() || e.target.textContent !== '')
+                return;
             gameController.playRound(parseInt(e.target.dataset.index, 10));
             updateGameboard();
-        })
+        });
     });
 
-  
-
-    restartButton.addEventListener("click", (e) => {
+    restartButton.addEventListener('click', (e) => {
         gameBoard.reset();
         gameController.reset();
         updateGameboard();
@@ -56,17 +51,13 @@ const displayController = (() => {
     });
 
     const updateGameboard = () => {
-        
-        for(let i = 0; i < boxElements.length; i++) {
+        for (let i = 0; i < boxElements.length; i++) {
             boxElements[i].textContent = gameBoard.getBox(i);
         }
     };
 
-
-   
-
     const setResultMessage = (winner) => {
-        if (winner === "Draw") {
+        if (winner === 'Draw') {
             setMessageElement("It's a draw!");
         } else {
             setMessageElement(`Player ${winner} has won!`);
@@ -74,26 +65,17 @@ const displayController = (() => {
     };
 
     const setMessageElement = (message) => {
-        messageElement.textContent = message
+        messageElement.textContent = message;
     };
 
-    return { setResultMessage, setMessageElement};
-
-
+    return { setResultMessage, setMessageElement };
 })();
 
 const gameController = (() => {
     const playerX = Player('X');
-    const playerO = Player("O");
+    const playerO = Player('O');
     let round = 1;
     let isOver = false;
-
-    
-
-
-
-
-
 
     const playRound = (boxIndex) => {
         gameBoard.setBox(boxIndex, getCurrentPlayerSign());
@@ -103,18 +85,19 @@ const gameController = (() => {
             return;
         }
         if (round === 9) {
-            displayController.setResultMessage("Draw");
+            displayController.setResultMessage('Draw');
             isOver = true;
             return;
         }
-        
+
         round++;
         displayController.setMessageElement(
             `Player ${getCurrentPlayerSign()}'s turn`
         );
     };
 
-    const getCurrentPlayerSign = () => round % 2 === 1 ? playerX.getSign() : playerO.getSign();
+    const getCurrentPlayerSign = () =>
+        round % 2 === 1 ? playerX.getSign() : playerO.getSign();
 
     const checkWinner = (boxIndex) => {
         const winConditions = [
@@ -131,10 +114,11 @@ const gameController = (() => {
         return winConditions
             .filter((combination) => combination.includes(boxIndex))
             .some((possibleCombination) =>
-              possibleCombination.every(
-                (index) => gameBoard.getBox(index) === getCurrentPlayerSign()
-              )
-         );
+                possibleCombination.every(
+                    (index) =>
+                        gameBoard.getBox(index) === getCurrentPlayerSign()
+                )
+            );
     };
 
     const getIsOver = () => isOver;
@@ -144,11 +128,5 @@ const gameController = (() => {
         isOver = false;
     };
 
-    return { playRound, getIsOver, reset};
+    return { playRound, getIsOver, reset };
 })();
-
-
-
-
-
-
